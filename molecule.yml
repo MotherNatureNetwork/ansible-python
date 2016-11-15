@@ -1,0 +1,18 @@
+---
+driver:
+  name: docker
+
+docker:
+  containers:
+
+      - name: mnn.python-01
+        image: ubuntu
+        image_version: trusty
+        ansible_groups:
+          - group1
+
+ansible:
+  playbook: tests/playbook.yml
+
+verifier:
+  name: testinfra
